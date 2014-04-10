@@ -1,9 +1,9 @@
-WP-RemoveKses
+RemoveKses
 =============
 
 Disables KSES for the WordPress Editor Role. Compatible with MU.
 
-### Can I disable KSES on other roles?
+#### Can I disable KSES on other roles?
 
 This plugin can be easily customised to remove KSES for more than just the `editor` role.
 Simply open the `removekses.php` file and uncomment the relevant lines:
@@ -13,18 +13,18 @@ Simply open the `removekses.php` file and uncomment the relevant lines:
     $contributor  = new RemoveKses(get_role("contributor")); // Remove KSES for contributor roles
     $subscriber   = new RemoveKses(get_role("subscriber")); // Remove KSES for subscriber roles
 
-### Requirements
+#### Requirements
 
 * WordPress >= 3.2
 * PHP >= 5.3.0
 
-### How does it work?
+#### How does it work?
 
 * Fetches the role to be modified via the constructor `new RemoveKses(get_role("editor"));`.
 * Adds the `unfiltered_html` capability to the role, if it doesn't already have it.
 * Hooks `content_filtered_save_pre` and runs `kses_remove_filters()` before content is sent to the database.
 
-### Links
+#### Links
 
 + [Company Page](http://ausweb.com.au/)
 + [WordPress Hosting](http://ausweb.com.au/web-applications/wordpress-hosting/)
