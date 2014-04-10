@@ -20,29 +20,29 @@ class RemoveKses {
 
 	private $role;
 
-    /**
-     * Send in a role to be modified.
-     *
-     * @since 1.0
-     * @access public
-     * @param $role Instance of WP_Role.
-     */
+	/**
+	 * Send in a role to be modified.
+	 *
+	 * @since 1.0
+	 * @access public
+	 * @param $role Instance of WP_Role.
+	 */
 
 	public function __construct(\WP_Role $role) {
 
 		$this->role = $role;
-        $this->addCapability("unfiltered_html");
-        $this->removeKses();
+		$this->addCapability("unfiltered_html");
+		$this->removeKses();
 
 	}
 
-    /**
-     * Checks if a role has a specific capability.
-     *
-     * @since 1.0
-     * @access private
-     * @param $capability Capability to check.
-     */
+	/**
+	 * Checks if a role has a specific capability.
+	 *
+	 * @since 1.0
+	 * @access private
+	 * @param $capability Capability to check.
+	 */
 
 	private function hasCapability($capability) {
 
@@ -54,13 +54,13 @@ class RemoveKses {
 
 	}
 
-    /**
-     * Adds a capability to a role, if it doesn't already have it.
-     *
-     * @since 1.0
-     * @access private
-     * @param $capability Capability to add.
-     */
+	/**
+	 * Adds a capability to a role, if it doesn't already have it.
+	 *
+	 * @since 1.0
+	 * @access private
+	 * @param $capability Capability to add.
+	 */
 
 	private function addCapability($capability) {
 
@@ -69,12 +69,12 @@ class RemoveKses {
 
 	}
 
-    /**
-     * Removes "kses" filtering for a specific role. Only executed prior to content save.
-     *
-     * @since 1.0
-     * @access public
-     */
+	/**
+	 * Removes "kses" filtering for a specific role. Only executed prior to content save.
+	 *
+	 * @since 1.0
+	 * @access public
+	 */
 
 	private function removeKses() {
 
@@ -82,8 +82,8 @@ class RemoveKses {
 
 			add_action('content_filtered_save_pre', function() {
 
-                if(function_exists("kses_remove_filters"))
-				    kses_remove_filters();
+				if(function_exists("kses_remove_filters"))
+					kses_remove_filters();
 
 			});
 
