@@ -5,7 +5,8 @@ Disables KSES for the WordPress Editor Role. Compatible with MU.
 
 ### Can I disable KSES on other roles?
 
-This plugin can be easily customised to remove KSES for more than just the `editor` role. Simply open the `removekses.php` file and uncomment the relevant lines:
+This plugin can be easily customised to remove KSES for more than just the `editor` role.
+Simply open the `removekses.php` file and uncomment the relevant lines:
 
     $editor       = new RemoveKses(get_role("editor")); // Remove KSES for Editor roles
     $author       = new RemoveKses(get_role("author")); // Remove KSES for Author roles
