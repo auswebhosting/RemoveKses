@@ -1,4 +1,4 @@
-## Remove Kses
+## Disable Kses
 Tags: unfiltered_html, kses, WPMU
 Requires at least: 3.0.1
 Tested up to: 3.8.2
